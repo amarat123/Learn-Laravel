@@ -1,0 +1,1 @@
+https://www.webslesson.info/2022/07/build-laravel-9-crud-application-with-mysql-bootstrap-5.html
