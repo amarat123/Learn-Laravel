@@ -17,16 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/dbconn', function () {
-    return view('dbconn');
-});
-
-
-use App\Http\Controllers\Controller;
-//Route::get('/insert/', [Controller::class, 'index']);
-
-
 use App\Http\Controllers\StudentController;
-Route::get('/insert', [StudentController::class, 'insert']);
+Route::resource('students', StudentController::class);
 
