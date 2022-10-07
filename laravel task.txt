@@ -1,0 +1,13 @@
+Task:
+1. Create Two Databases named
+	1.1 old school
+	1.2 new school
+2. Each Database has two tables
+	2.1 Students
+	2.2 Student_details
+2. Create an array of 100 student data.
+3. Arrange the array in ascending order by name.
+4. Insert into the old school database in ascending order by student name in both tables.
+5. Retrieve student data in descending order and insert it into the new school database in descending order by name.
+ After completing the task send both Databases with the task.
+ Note:- Design database structure yourself with proper column name in both tables.
