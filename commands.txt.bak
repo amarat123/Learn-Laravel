@@ -1,0 +1,46 @@
+
+//reference URL
+https://www.webslesson.info/2022/07/build-laravel-9-crud-application-with-mysql-bootstrap-5.html
+
+
+//for create project
+composer create-project --prefer-dist laravel/laravel laravel_9_crud
+
+
+//for create table
+php artisan make:migration create_students_table --create=students
+
+
+
+
+
+// for sink file to databse
+php artisan migrate
+
+
+//for create controller an model
+php artisan make:controller StudentController --resource --model=Student
+
+
+//for serve project
+php artisan serve
+
+
+
+
+files path 
+
+//for connect database
+E:\xampp\htdocs\Learn-Laravel\laravel_9_crud\.env
+E:\xampp\htdocs\Learn-Laravel\laravel_9_crud\config\database.php
+
+
+//for define routes
+E:\xampp\htdocs\Learn-Laravel\laravel_9_crud\routes\web.php
+
+
+//for define controllers
+E:\xampp\htdocs\Learn-Laravel\laravel_9_crud\app\Http\Controllers\StudentController.php
+
+//for define models
+E:\xampp\htdocs\Learn-Laravel\laravel_9_crud\app\Models\Student.php

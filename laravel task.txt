@@ -7,6 +7,8 @@ Task:
 	2.2 Student_details
 2. Create an array of 100 student data.  >> done
 3. Arrange the array in ascending order by name.    >> done
+
+
 4. Insert into the old school database in ascending order by student name in both tables.
 5. Retrieve student data in descending order and insert it into the new school database in descending order by name.
  After completing the task send both Databases with the task.
