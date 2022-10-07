@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
+
+use DB;
+
 class StudentController extends Controller
 {
     /**
@@ -14,6 +17,20 @@ class StudentController extends Controller
      */
     public function index()
     {
+        /*
+        try {
+            DB::connection()->getPdo();
+        } catch (\Exception $e) {
+            die("Could not connect to the database.  Please check your configuration. error:" . $e );
+        }
+        */
+        /*
+        if(DB::connection()->getpdo()){
+            echo "Successfull connected to DB and DB name is " . DB::connection()->getDatabaseName(); 
+            die;
+        }
+        */
+        
         $data = Student::latest()->paginate(5);
 
         return view('index', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
@@ -40,7 +57,8 @@ class StudentController extends Controller
         $request->validate([
             'student_name'          =>  'required',
             'student_email'         =>  'required|email|unique:students',
-            'student_image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'
+            //'student_image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000'
+            'student_image'         =>  'required|image|mimes:jpg,png,jpeg,gif,svg'
         ]);
 
         $file_name = time() . '.' . request()->student_image->getClientOriginalExtension();
