@@ -7,7 +7,7 @@ https://www.webslesson.info/2022/07/build-laravel-9-crud-application-with-mysql-
 composer create-project --prefer-dist laravel/laravel laravel_9_crud
 
 
-//for create table
+//for create table migration
 php artisan make:migration create_students_table --create=students
 
 
@@ -22,6 +22,17 @@ php artisan make:controller StudentController --resource --model=Student
 
 //for serve project
 php artisan serve
+
+
+//when setup one project via github
+composer update --no-scripts
+
+
+//run multiple Laravel projects 
+php artisan serve --port=8001
+
+
+
 
 
 
@@ -42,3 +53,5 @@ E:\xampp\htdocs\Learn-Laravel\laravel_9_crud\app\Http\Controllers\StudentControl
 
 //for define models
 E:\xampp\htdocs\Learn-Laravel\laravel_9_crud\app\Models\Student.php
+
+

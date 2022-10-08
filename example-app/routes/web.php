@@ -30,3 +30,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\StudentController;
 Route::get('/insert', [StudentController::class, 'insert']);
 
+Route::get('/store', [StudentController::class, 'store']);
+
+

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
+-- version 4.4.14
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2022 at 02:16 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Oct 09, 2022 at 12:16 AM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `old school`
+-- Database: `old_school`
 --
 
 -- --------------------------------------------------------
@@ -27,12 +26,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `students`
 --
 
-CREATE TABLE `students` (
+CREATE TABLE IF NOT EXISTS `students` (
   `id` int(11) NOT NULL,
-  `student_uid` varchar(255) NOT NULL,
-  `student_rollno` int(11) NOT NULL,
-  `created_date` date NOT NULL,
-  `modified_date` date NOT NULL
+  `student_uid` varchar(255) DEFAULT NULL,
+  `student_rollno` int(11) DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `modified_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -41,12 +40,10 @@ CREATE TABLE `students` (
 -- Table structure for table `student_details`
 --
 
-CREATE TABLE `student_details` (
-  `id` int(11) DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `student_details` (
+  `id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
-  `firstname` varchar(11) NOT NULL,
-  `middle_name` varchar(11) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
+  `name` varchar(11) NOT NULL,
   `gender` enum('male','female','','') NOT NULL,
   `dob` date NOT NULL,
   `contact` int(11) NOT NULL,
@@ -70,6 +67,12 @@ ALTER TABLE `students`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student_details`
+--
+ALTER TABLE `student_details`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -78,8 +81,11 @@ ALTER TABLE `students`
 --
 ALTER TABLE `students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
+--
+-- AUTO_INCREMENT for table `student_details`
+--
+ALTER TABLE `student_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
