@@ -28,8 +28,9 @@ use App\Http\Controllers\Controller;
 
 
 use App\Http\Controllers\StudentController;
-Route::get('/insert', [StudentController::class, 'insert']);
+Route::get('/index', [StudentController::class, 'index']);
 
 Route::get('/store', [StudentController::class, 'store']);
+Route::get('/copy', [StudentController::class, 'copy']);
 
 

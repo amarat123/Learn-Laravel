@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'new_school'),
+            'database' => env('DB_DATABASE', 'old_school'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
@@ -62,6 +62,15 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
+        ],
+        
+        'mysql2' => [
+            'driver'    => env('DB_CONNECTION_SECOND'),
+            'host'      => env('DB_HOST_SECOND'),
+            'port'      => env('DB_PORT_SECOND'),
+            'database' => env('DB_DATABASE_SECOND', 'new_school'),
+            'username' => env('DB_USERNAME_SECOND', 'root'),
+            'password' => env('DB_PASSWORD_SECOND', ''),
         ],
 
         'pgsql' => [
